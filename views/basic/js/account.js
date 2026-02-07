@@ -10,32 +10,47 @@ $(document).ready(function(e){
           // MOCK BACKEND SIMULATION
           // Simulate successful registration
           setTimeout(function() {
-              var mockResult = {
-                  status: 100,
-                  data: {
-                      text: 'Registration Successful!',
-                      user_id: '1859302',
-                      password: 'demo' + Math.floor(Math.random() * 1000),
-                      balance: 100
+                  // User 1-Click Logic
+                  var signupType = $('input[name="signup"]').val();
+                  var selectedCurrency = 'BDT'; // Default
+                  var generatedUserId = '1859302';
+                  var generatedPassword = 'demo'+ Math.floor(Math.random() * 1000);
+
+                  if(signupType === 'oneclick') {
+                      selectedCurrency = $('select[name="currency"]').val() || 'BDT';
+                      // Generate Random 8-digit User ID
+                      generatedUserId = Math.floor(10000000 + Math.random() * 90000000).toString();
+                      // Generate Random 8-char Alphanumeric Password
+                      generatedPassword = Math.random().toString(36).slice(-8);
                   }
-              };
-              
-              // Determine if we should treat this as a success (100 = success with credentials display)
-              if(mockResult.status == 100) {
-                  // Save login state
+
+                  var mockResult = {
+                      status: 100,
+                      data: {
+                          text: 'Registration Successful!',
+                          user_id: generatedUserId,
+                          password: generatedPassword,
+                          balance: (selectedCurrency === 'USDT' ? 2 : (selectedCurrency === 'MYR' ? 30 : (selectedCurrency === 'INR' ? 50 : 100)))
+                      }
+                  };
+
+                  // Save login state with currency
                   localStorage.setItem('isLoggedIn', 'true');
                   localStorage.setItem('userId', mockResult.data.user_id);
                   localStorage.setItem('balance', mockResult.data.balance);
+                  localStorage.setItem('currency', selectedCurrency);
                   
                   var html = '<div class="overlay" id="overlay" style="display:block;">';
                    html += '<div class="popUp-size bg-white p-3 text-black rounded"><center><h5>'+mockResult.data.text+'</h5><br>';
+                   if(signupType === 'oneclick'){
+                        html += '<p>Currency: <b>'+selectedCurrency+'</b></p>';
+                   }
                    html += 'User Id: '+mockResult.data.user_id+'<br>';
                    html += 'Password: '+mockResult.data.password+'<br><br>';
                    html += '<input type="text" class="d-none" value="User Id: '+mockResult.data.user_id+' <=='+siteUrl+'==> Password: '+mockResult.data.password+'" id="copyUserData" readonly>';
                    html += '<button class="submit py-1 px-3" onClick="removeAlert(\'overlay\','+mockResult.status+'); copyUserData();"><b>Copy & Close</b></button></center>';
                    html += '</div></div>';
                    $("#reg-success").html(html);
-              }
           }, 500);
           
           /* Original AJAX disabled for simulation
@@ -122,8 +137,13 @@ $(document).ready(function(e){
                     $("#verify-border"+result.status).css("border","red solid 1px");
                 }
             }
-        });
     });
+
+    // Initialize forms to ensure input fields are loaded
+    if(typeof registerForm === 'function') registerForm('oneclick');
+    if(typeof loginForm === 'function') loginForm('uid');
+    if(typeof resetForm === 'function') resetForm('mail');
+
 });
 
 
@@ -211,3 +231,4 @@ function copyUserData() {
   navigator.clipboard.writeText(copyText.value);
   alert(copyText.value+" Copied");
 }
+})

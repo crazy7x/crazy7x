@@ -72,12 +72,13 @@ $(document).ready(function(){
         var userId = localStorage.getItem('userId') || 'DemoUser';
         
         var userBalance = localStorage.getItem('balance') || '0.00';
+        var userCurrency = localStorage.getItem('currency') || 'BDT';
         
         // 1. HEADER UPDATE - Match original design
         var loggedInHtml = `
             <div class="d-flex align-items-center">
                 <div class="dropdown" id="balance">
-                    <span class="text-white">BDT ${userBalance}</span>
+                    <span class="text-white">${userCurrency} ${userBalance}</span>
                 </div>
                 <div class="ms-2">
                     <a class="submit rounded py-1 px-2" href="deposit.html" style="background: var(--success);"><i class="fa-solid fa-plus"></i></a>
