@@ -32,7 +32,7 @@
             <span class="t1">Crazy</span><span class="t2">7x</span> </a>
         </div>
 
-        <div class="">
+        <div class="" id="auth-section">
           <div class="d-flex">
             <div class="me-2 mt-2">
               <a class="submit" data-bs-toggle="modal" data-bs-target="#loginModal" onclick="loginForm('uid');">Log
@@ -48,6 +48,63 @@
     </div>
   </header>
   <div class="top-speach"></div>
+
+  <!-- Right Side Menu (Account Sidebar) -->
+  <div class="rightMenu menu" id="rightMenu">
+    <div class="scroll-y fh-100">
+      <div class="box text-center p-3">
+        <div><b>user1770215821</b></div>
+        <div>#2359</div>
+        <div id="bonusBalance"></div>
+      </div>
+      <ul>
+        <li>
+          <a href="#">
+            <i class="fa-regular fa-user-circle me-1"></i> My Profile</a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="fa-regular fa-circle-dollar me-1"></i> Account</a>
+        </li>
+        <li>
+          <a href="deposit.html">
+            <i class="fa-regular fa-circle-down me-1"></i> Deposit</a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="fa-regular fa-circle-up me-1"></i> Withdraw Funds</a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="fa-regular fa-money-from-bracket me-1"></i> Cash Withdraw</a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="fa-regular fa-history me-1"></i> Sports History</a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="fa-regular fa-spade me-1"></i> Games History</a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="fa-regular fa-exchange me-1"></i> Transaction History</a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="fa-regular fa-check-circle me-1"></i> Booking Events</a>
+        </li>
+        <li>
+          <a href="contact.html">
+            <i class="fa-regular fa-circle-info me-1"></i> Help & Support</a>
+        </li>
+        <li>
+          <a href="#" onclick="logout()">
+            <i class="fa-regular fa-sign-out me-1"></i> Logout</a>
+        </li>
+      </ul>
+    </div>
+  </div>
 
 
 
@@ -148,27 +205,12 @@
         <a class="btn d-block w-100" href="index.html">
           <i class="fa fa-regular fa-home"></i><br>Home </a>
       </div>
-      <div class="dropup">
-        <a class="btn d-block w-100 fs-12 dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true"
-          aria-expanded="false">
-          <i class="fa-regular fa-spade fs-18"></i><br>Casino </a>
-        <ul class="dropdown-menu text-center" style="width:90px; min-width:90px;">
-          <li>
-            <a class="btn btn-sm" href="index.html?redirect=games?page=casino">
-              <i class="fa-regular fa-cards"></i><br>Live Casino </a>
-          </li>
-          <li>
-            <a class="btn btn-sm" href="index.html?redirect=games?page=slot">
-              <i class="fa-regular fa-slot-machine"></i><br>Slot Games </a>
-          </li>
-          <li>
-            <a class="btn btn-sm" href="index.html?redirect=games?page=crash">
-              <i class="fa-regular fa-rocket-launch"></i><br>Crash Games </a>
-          </li>
-        </ul>
+      <div>
+        <a class="btn d-block w-100" href="casino.html">
+          <i class="fa-regular fa-chart-line fs-18"></i><br>Turnover </a>
       </div>
       <div>
-        <a class="btn d-block w-100" data-bs-toggle="modal" data-bs-target="#loginModal" onclick="loginForm('uid');">
+        <a class="btn d-block w-100" id="bottomMenu">
           <i class="fa-regular fa-user-circle"></i><br>Account </a>
       </div>
     </div>
