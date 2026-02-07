@@ -286,123 +286,237 @@
     </header>
     <div class="top-speach"></div>
 
-    <div class="referral-container">
-        <div class="container-fluid px-lg-4 px-3 pt-3">
-
-            <!-- Tabs -->
-            <div class="referral-tabs">
-                <button class="referral-tab active" data-tab="info">Info</button>
-                <button class="referral-tab" data-tab="details">Details</button>
+    <!-- Right Side Menu (Account Sidebar) -->
+    <div class="rightMenu menu" id="rightMenu">
+        <div class="scroll-y fh-100">
+            <div class="box text-center p-3">
+                <div><b>user1770215821</b></div>
+                <div>#2359</div>
+                <div id="bonusBalance"></div>
             </div>
+            <ul>
+                <li>
+                    <a href="#">
+                        <i class="fa-regular fa-user-circle me-1"></i> My Profile</a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fa-regular fa-circle-dollar me-1"></i> Account</a>
+                </li>
+                <li>
+                    <a href="deposit.html">
+                        <i class="fa-regular fa-circle-down me-1"></i> Deposit</a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fa-regular fa-circle-up me-1"></i> Withdraw Funds</a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fa-regular fa-money-from-bracket me-1"></i> Cash Withdraw</a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fa-regular fa-history me-1"></i> Sports History</a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fa-regular fa-spade me-1"></i> Games History</a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fa-regular fa-exchange me-1"></i> Transaction History</a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fa-regular fa-check-circle me-1"></i> Booking Events</a>
+                </li>
+                <li>
+                    <a href="contact.html">
+                        <i class="fa-regular fa-circle-info me-1"></i> Help & Support</a>
+                </li>
+                <li>
+                    <a href="#" onclick="logout()">
+                        <i class="fa-regular fa-sign-out me-1"></i> Logout</a>
+                </li>
+            </ul>
+        </div>
+    </div>
 
-            <!-- Info Tab Content -->
-            <div class="tab-content active" id="info-tab">
-                <!-- Referral Code Section -->
-                <div class="referral-info-section">
-                    <div class="qr-code-container">
-                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://crazy7x.com?ref=REFV53F5A"
-                            alt="QR Code" id="referralQR">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-2 p-0">
+                <div class="leftMenu menu" id="leftMenu">
+                    <div class="scroll-y fh-100">
+                        <ul>
+                            <li class="border-bottom text-center p-3 d-mobile w-100">Crazy7x</li>
+                            <li>
+                                <a href="index.html">
+                                    <i class="fa-regular fa-home me-1"></i> Crazy7x </a>
+                            </li>
+                            <li><a href="index.html?redirect=games?page=sports">
+                                    <i class="fa-regular fa-baseball"></i> <span class="ms-2">Sports</span>
+                                </a>
+                            </li>
+                            <li><a href="index.html?redirect=games?page=casino">
+                                    <i class="fa-regular fa-spade"></i> <span class="ms-2">Live Casino</span>
+                                </a>
+                            </li>
+                            <li><a href="index.html?redirect=games?page=slot">
+                                    <i class="fa-regular fa-slot-machine"></i> <span class="ms-2">Slot</span>
+                                </a>
+                            </li>
+                            <li><a href="index.html?redirect=games?page=crash">
+                                    <i class="fa-regular fa-rocket-launch"></i> <span class="ms-2">Crash</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="promotions.html">
+                                    <i class="fa-regular fa-blog me-1"></i> Promotion </a>
+                            </li>
+                            <li>
+                                <a href="contact.html">
+                                    <i class="fa-regular fa-headset me-1"></i> Help </a>
+                            </li>
+                            <li>
+                                <a href="partner.html">
+                                    <i class="fa-regular fa-handshake me-1"></i> My Referral </a>
+                            </li>
+                            <li>
+                                <a style="border:1px solid rgba(139, 139, 139, .1);"
+                                    class="bg-gray rounded py-2 px-3 d-block mb-1 w-100 text-start" href="apps.html"><i
+                                        class="fa-regular fa-mobile-screen-button me-2"></i> Download App</a>
+                            </li>
+                            <li><a href="https://t.me/000000"><i class="fa-brands fa-telegram me-1"></i> Telegram</a>
+                            </li>
+                        </ul>
                     </div>
-                    <div class="referral-code-section">
-                        <div class="referral-label">Your referral code</div>
-                        <div class="referral-code">
-                            <h3 id="referralCodeDisplay">REFV53F5A</h3>
-                            <button class="copy-code-btn" onclick="copyReferralCode();" title="Copy code">
-                                <i class="fa-regular fa-copy"></i>
-                            </button>
-                        </div>
-                        <div class="referral-description">Share this code with friends to earn rewards</div>
-                        <div class="referral-buttons">
-                            <button class="btn-referral btn-copy-link" onclick="copyReferralLink();">
-                                <i class="fa-solid fa-share-nodes"></i> Copy Link
-                            </button>
-                            <button class="btn-referral btn-share" onclick="shareReferral();">
-                                <i class="fa-solid fa-share-nodes"></i> Share
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Stats Section -->
-                <div class="stats-container">
-                    <div class="stats-grid">
-                        <div class="stat-card">
-                            <div class="stat-label">Active Users</div>
-                            <div class="stat-value">0</div>
-                        </div>
-                        <div class="stat-card">
-                            <div class="stat-label">Lifetime rewards</div>
-                            <div class="stat-value">0</div>
-                        </div>
-                        <div class="stat-card">
-                            <div class="stat-label">Referral turnover</div>
-                            <div class="stat-value">0</div>
-                        </div>
-                        <div class="stat-card">
-                            <div class="stat-label">Cash rewards</div>
-                            <div class="stat-value">0</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- No Referrals Message -->
-                <div class="no-referrals-container">
-                    <div class="no-referrals-title">No referrals yet</div>
-                    <div class="no-referrals-text">Share your referral code to start earning rewards</div>
-                </div>
-            </div>
-
-            <!-- Details Tab Content -->
-            <div class="tab-content" id="details-tab">
-                <div class="details-content">
-                    <h4 class="mb-4" style="color: #fff;">How Our Referral Program Works</h4>
-
-                    <div class="mb-4">
-                        <div class="d-flex align-items-start mb-2">
-                            <span
-                                style="color: #d4a629; font-weight: bold; margin-right: 10px; font-size: 18px;">1</span>
-                            <div>
-                                <h6 style="color: #d4a629; margin-bottom: 5px;">Share Your Code</h6>
-                                <p style="color: #888; font-size: 14px; margin: 0;">Share your unique referral code with
-                                    friends. They'll use it when signing up for your app.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="mb-4">
-                        <div class="d-flex align-items-start mb-2">
-                            <span
-                                style="color: #d4a629; font-weight: bold; margin-right: 10px; font-size: 18px;">2</span>
-                            <div>
-                                <h6 style="color: #d4a629; margin-bottom: 5px;">Earn Rewards</h6>
-                                <p style="color: #888; font-size: 14px; margin: 0;">When your friend makes their first
-                                    deposit or completes qualifying activities, you'll earn rewards.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="mb-4">
-                        <div class="d-flex align-items-start mb-2">
-                            <span
-                                style="color: #d4a629; font-weight: bold; margin-right: 10px; font-size: 18px;">3</span>
-                            <div>
-                                <h6 style="color: #d4a629; margin-bottom: 5px;">Track Your Earnings</h6>
-                                <p style="color: #888; font-size: 14px; margin: 0;">Monitor your referral earnings and
-                                    statistics in real-time on this dashboard.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <h5 class="mt-4 mb-3" style="color: #d4a629;">Terms & Conditions</h5>
-                    <ul style="color: #888; font-size: 14px; padding-left: 20px;">
-                        <li class="mb-2">Referral rewards are subject to terms and conditions</li>
-                        <li class="mb-2">Abuse of the referral system may result in account suspension</li>
-                        <li class="mb-2">Rewards may take up to 24 hours to appear in your account</li>
-                        <li class="mb-2">Minimum withdrawal limits may apply to referral earnings</li>
-                    </ul>
                 </div>
             </div>
+            <div class="col-lg-10 px-lg-1 px-0">
+                <div class="referral-container">
+                    <div class="container-fluid px-lg-4 px-3 pt-3">
 
+                        <!-- Tabs -->
+                        <div class="referral-tabs">
+                            <button class="referral-tab active" data-tab="info">Info</button>
+                            <button class="referral-tab" data-tab="details">Details</button>
+                        </div>
+
+                        <!-- Info Tab Content -->
+                        <div class="tab-content active" id="info-tab">
+                            <!-- Referral Code Section -->
+                            <div class="referral-info-section">
+                                <div class="qr-code-container">
+                                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://crazy7x.com?ref=REFV53F5A"
+                                        alt="QR Code" id="referralQR">
+                                </div>
+                                <div class="referral-code-section">
+                                    <div class="referral-label">Your referral code</div>
+                                    <div class="referral-code">
+                                        <h3 id="referralCodeDisplay">REFV53F5A</h3>
+                                        <button class="copy-code-btn" onclick="copyReferralCode();" title="Copy code">
+                                            <i class="fa-regular fa-copy"></i>
+                                        </button>
+                                    </div>
+                                    <div class="referral-description">Share this code with friends to earn rewards</div>
+                                    <div class="referral-buttons">
+                                        <button class="btn-referral btn-copy-link" onclick="copyReferralLink();">
+                                            <i class="fa-solid fa-share-nodes"></i> Copy Link
+                                        </button>
+                                        <button class="btn-referral btn-share" onclick="shareReferral();">
+                                            <i class="fa-solid fa-share-nodes"></i> Share
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Stats Section -->
+                            <div class="stats-container">
+                                <div class="stats-grid">
+                                    <div class="stat-card">
+                                        <div class="stat-label">Active Users</div>
+                                        <div class="stat-value">0</div>
+                                    </div>
+                                    <div class="stat-card">
+                                        <div class="stat-label">Lifetime rewards</div>
+                                        <div class="stat-value">0</div>
+                                    </div>
+                                    <div class="stat-card">
+                                        <div class="stat-label">Referral turnover</div>
+                                        <div class="stat-value">0</div>
+                                    </div>
+                                    <div class="stat-card">
+                                        <div class="stat-label">Cash rewards</div>
+                                        <div class="stat-value">0</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- No Referrals Message -->
+                            <div class="no-referrals-container">
+                                <div class="no-referrals-title">No referrals yet</div>
+                                <div class="no-referrals-text">Share your referral code to start earning rewards</div>
+                            </div>
+                        </div>
+
+                        <!-- Details Tab Content -->
+                        <div class="tab-content" id="details-tab">
+                            <div class="details-content">
+                                <h4 class="mb-4" style="color: #fff;">How Our Referral Program Works</h4>
+
+                                <div class="mb-4">
+                                    <div class="d-flex align-items-start mb-2">
+                                        <span
+                                            style="color: #d4a629; font-weight: bold; margin-right: 10px; font-size: 18px;">1</span>
+                                        <div>
+                                            <h6 style="color: #d4a629; margin-bottom: 5px;">Share Your Code</h6>
+                                            <p style="color: #888; font-size: 14px; margin: 0;">Share your unique
+                                                referral code with
+                                                friends. They'll use it when signing up for your app.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="mb-4">
+                                    <div class="d-flex align-items-start mb-2">
+                                        <span
+                                            style="color: #d4a629; font-weight: bold; margin-right: 10px; font-size: 18px;">2</span>
+                                        <div>
+                                            <h6 style="color: #d4a629; margin-bottom: 5px;">Earn Rewards</h6>
+                                            <p style="color: #888; font-size: 14px; margin: 0;">When your friend makes
+                                                their first
+                                                deposit or completes qualifying activities, you'll earn rewards.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="mb-4">
+                                    <div class="d-flex align-items-start mb-2">
+                                        <span
+                                            style="color: #d4a629; font-weight: bold; margin-right: 10px; font-size: 18px;">3</span>
+                                        <div>
+                                            <h6 style="color: #d4a629; margin-bottom: 5px;">Track Your Earnings</h6>
+                                            <p style="color: #888; font-size: 14px; margin: 0;">Monitor your referral
+                                                earnings and
+                                                statistics in real-time on this dashboard.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <h5 class="mt-4 mb-3" style="color: #d4a629;">Terms & Conditions</h5>
+                                <ul style="color: #888; font-size: 14px; padding-left: 20px;">
+                                    <li class="mb-2">Referral rewards are subject to terms and conditions</li>
+                                    <li class="mb-2">Abuse of the referral system may result in account suspension</li>
+                                    <li class="mb-2">Rewards may take up to 24 hours to appear in your account</li>
+                                    <li class="mb-2">Minimum withdrawal limits may apply to referral earnings</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -517,6 +631,133 @@
     <script src="views/basic/js/account.js"></script>
     <script src="views/basic/js/custom.js"></script>
     <script src="views/basic/js/server.js"></script>
+    <div class="modal fade" id="resetModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-md">
+            <div class="modal-content">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">X</button>
+                <div class="modal-body">
+                    <h1 class="text-center fs-20 mb-2">Reset Password</h1><br>
+                    <div class="row resetForm mb-3">
+                        <div class="col-6 p-0"><a class="active" data-reset="mail"><i
+                                    class="fa-regular fa-envelope me-1"></i> By
+                                Email</a></div>
+                        <div class="col-6 p-0"><a data-reset="phone"><i
+                                    class="fa-regular fa-mobile-screen-button me-1"></i> By
+                                Phone</a></div>
+                    </div>
+                    <div id="reset-success" class="text-success"></div>
+                    <div id="reset-error600" class="text-danger"></div>
+                    <form method="POST" id="reset">
+                        <div id="reset-form"></div>
+                        <input type="submit" class="submit w-100" id="btn-es" value="Reset Password">
+                    </form>
+                    <div class="form-desc">
+                        <p>Already have an account? <a href="#" data-bs-toggle="modal" data-bs-target="#loginModal"
+                                onclick="loginForm('uid');">Log In</a></p>
+
+                        <p>Do not have an account? <a href="#" data-bs-toggle="modal" data-bs-target="#registerModal"
+                                onclick="registerForm('oneclick');">Registration</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="modal fade" id="loginModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-md modal-dialog-centered">
+            <div class="modal-content">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">X</button>
+                <div class="modal-body">
+                    <h1 class="text-center fs-20 mb-2">Log In</h1><br>
+                    <div class="row loginForm mb-3">
+                        <div class="col-4 p-0"><a class="active" data-login="uid"><i
+                                    class="fa-regular fa-circle-check me-1"></i> By
+                                Id</a></div>
+                        <div class="col-4 p-0"><a data-login="mail"><i class="fa-regular fa-envelope me-1"></i> By
+                                Email</a></div>
+                        <div class="col-4 p-0"><a data-login="phone"><i
+                                    class="fa-regular fa-mobile-screen-button me-1"></i> By
+                                Phone</a></div>
+                    </div>
+                    <div id="log-error600" class="text-danger"></div>
+                    <form method="POST" id="login">
+                        <div id="login-form"></div>
+                        <input type="submit" class="submit w-100" value="Log In">
+                    </form>
+                    <div class="form-desc">
+                        <p>Do not have an account? <a href="#" data-bs-toggle="modal" data-bs-target="#registerModal"
+                                onclick="registerForm('oneclick');"> Registration</a></p>
+
+                        <p><a href="#" data-bs-toggle="modal" data-bs-target="#resetModal"
+                                onclick="resetForm('mail');">Reset
+                                Password</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="reg-success"></div>
+    <div class="modal fade" id="registerModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">X</button>
+                <div class="modal-body">
+                    <h1 class="text-center fs-20 mb-2">Create a new account</h1><br>
+                    <div class="row registerForm mb-3">
+                        <div class="col-4 p-0"><a class="active" data-register="oneclick"><i
+                                    class="fa-regular fa-hand-pointer me-1"></i> 1-Click</a></div>
+                        <div class="col-4 p-0"><a data-register="phone"><i
+                                    class="fa-regular fa-mobile-screen-button me-1"></i> By
+                                Phone</a></div>
+                        <div class="col-4 p-0"><a data-register="mail"><i class="fa-regular fa-envelope me-1"></i> By
+                                Email</a>
+                        </div>
+                    </div>
+                    <div id="reg-error600" class="text-danger"></div>
+                    <form method="POST" id="register">
+                        <div id="register-form"></div>
+                        <input type="submit" class="submit w-100" value="Registration" />
+                    </form><br>
+                    <div class="form-desc">
+                        <p>Already have an account? <a href="#" data-bs-toggle="modal" data-bs-target="#loginModal"
+                                onclick="loginForm('uid');">Log In</a></p>
+
+                        <p>By clicking this button you confirm that you have read and agree to the <a target="_blank"
+                                href="tos.html">Terms and Conditions</a> and <a target="_blank"
+                                href="privacy.html">Privacy Policy</a>
+                            of the company and confirm that you are of legal age</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="apiModal" tabindex="-1" aria-hidden="true" style="z-index: 1060;">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content bg-dark text-white border-secondary">
+                <div class="modal-header border-bottom border-secondary">
+                    <h5 class="modal-title fs-5">Connection Required</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center p-4">
+                    <i class="fa-regular fa-plug-circle-exclamation text-warning mb-3" style="font-size: 50px;"></i>
+                    <p class="mb-0 fs-16">API needs to be connected to play this game.</p>
+                </div>
+                <div class="modal-footer border-0 justify-content-center">
+                    <button type="button" class="btn btn-secondary w-50" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>
